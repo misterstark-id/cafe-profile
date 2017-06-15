@@ -1,0 +1,69 @@
+<%= form_for (@user) do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
+  <div class="box-body">
+    <div class="form-group col-md-6">
+      <%= f.label :full_name %><span style="color: red;">*</span>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+        <%= f.text_field :name, class: "form-control", placeholder: "Full Name" %>
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <%= f.label :email_address %><span style="color: red;">*</span>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+        <%= f.email_field :email, class: "form-control", placeholder: "Email Address" %>
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <%= f.label :status %><span style="color: red;">*</span>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-book"></i></span>
+        <%= f.select :status, User.statuses.keys, {}, {class: "form-control"} %>
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <%= f.label :gender %><span style="color: red;">*</span>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-genderless"></i></span>
+        <%= f.select :gender, User.genders.keys, {}, {class: "form-control"} %>
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <%= f.label :password %><span style="color: red;">*</span>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-key"></i></span>
+        <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <%= f.label :password_confirmation %><span style="color: red;">*</span>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-key"></i></span>
+        <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Password Confirmation" %>
+      </div>
+    </div>
+    <!-- <div class="form-group col-md-6">
+      <label for="exampleInputFile">File input</label>
+      <input type="file" id="exampleInputFile">
+
+      <p class="help-block">Example block-level help text here.</p>
+    </div> -->
+
+    <div class="form-group col-md-6">
+      <%= f.label :phone %><span style="color: red;">*</span>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+          <%= f.text_field :phone, class:"form-control", autofocus:true, placeholder:'without +62 or 0', value: number_to_phone('')%>
+      </div>
+      <!-- /.input group -->
+    </div>
+  </div>
+  <!-- /.box-body -->
+
+  <div class="box-footer">
+    <p class="help-block">NB :<br/><span style="color: red;">*</span> Required field</p>
+    <%= f.submit yield(:button), class: "btn btn-primary pull-right" %>
+    <!-- <button type="submit" class="btn btn-primary pull-right">Submit</button> -->
+  </div>
+<% end %>

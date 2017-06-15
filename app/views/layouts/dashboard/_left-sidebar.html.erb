@@ -1,0 +1,75 @@
+<!-- Left side column. contains the logo and sidebar -->
+<aside class="main-sidebar">
+
+  <!-- sidebar: style can be found in sidebar.less -->
+  <section class="sidebar">
+
+    <!-- Sidebar user panel (optional) -->
+    <!-- <div class="user-panel">
+      <div class="pull-left image">
+        <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+      </div>
+      <div class="pull-left info">
+        <p>Alexander Pierce</p>
+        Status
+        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+      </div>
+    </div> -->
+
+    <!-- search form (Optional) -->
+    <!-- <form action="#" method="get" class="sidebar-form">
+      <div class="input-group">
+        <input type="text" name="q" class="form-control" placeholder="Search...">
+            <span class="input-group-btn">
+              <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+              </button>
+            </span>
+      </div>
+    </form> -->
+    <!-- /.search form -->
+
+    <!-- Sidebar Menu -->
+    <ul class="sidebar-menu">
+      <li class="header">Main Navigation</li>
+      <!-- Optionally, you can add icons to the links -->
+      <li class="active"><%= link_to "<i class=\"fa fa-dashboard\"></i> <span>Dashboard</span></a>".html_safe, dashboard_url %>
+        <!-- <a href="#"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a> -->
+      </li>
+      <!-- <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li> -->
+      <li class="treeview active">
+        <a href="#">
+          <i class="fa fa-list-alt"></i>
+          <span>Menu</span>
+          <span class="pull-right-container">
+            <i class="pull-right fa fa-angle-left "></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="#"><i class="fa fa-coffee"></i><span>Drinks</span></a></li>
+          <li><a href="#"><i class="fa fa-cutlery"></i><span> Foods</span></a></li>
+          <li><a href="#"><i class="fa fa-cubes"></i><span> Specials</span></a></li>
+        </ul>
+      </li>
+      <li><a href="#"><i class="fa fa-ticket"></i> <span>Promo</span></a></li>
+      <li><a href="#"><i class="fa fa-calendar"></i> <span>Event</span></a></li>
+      <li><a href="#"><i class="fa fa-file-text"></i> <span>Blog</span></a></li>
+      <li><a href="#"><i class="fa fa-picture-o"></i> <span>Gallery</span></a></li>
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-cogs"></i>
+          <span>Setting</span>
+          <span class="pull-right-container">
+            <i class="pull-right fa fa-angle-left "></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><%= link_to "<i class=\"fa fa-user\"></i><span>User</span>".html_safe, users_url %></li>
+          <li><a href="#"><i class="fa fa-building"></i><span>Branch</span></a></li>
+          <li><a href="#"><i class="fa fa-database"></i><span>Others</span></a></li>
+        </ul>
+      </li>
+    </ul>
+    <!-- /.sidebar-menu -->
+  </section>
+  <!-- /.sidebar -->
+</aside>
